@@ -11,9 +11,9 @@ app.use(express.json());
 //aplication/x-www-form-urlencoded
 app.use(express.urlencoded({ extended:true }));
 
-app.get('/', function(req, res){
+/*app.get('/', function(req, res){
     res.send('holissssss');
-})
+})*/
 
 // Middleware para Vue.js router modo history
 const history = require('connect-history-api-fallback');
