@@ -20,6 +20,9 @@ app.use(express.json());
 //aplication/x-www-form-urlencoded
 app.use(express.urlencoded({ extended:true }));
 
+
+app.use('/api', require('./routes/nota'));
+
 /*app.get('/', function(req, res){
     res.send('holissssss');
 })*/
