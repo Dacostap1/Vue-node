@@ -51,5 +51,29 @@ router.get('/notas', async(req, res) => {
     }
 });
 
+//detele
+router.delete('/nota/:id', async(req, res) => {
+
+    const _id = req.params.id;
+
+    try {
+        const notaBD = await Nota.findByIdAndDelete({_id});
+        if(!notaBD){ //esta para chekear si es util
+            return res.status(400).json({
+                mensaje: 'No se encontró la nota',
+                error
+            }) 
+        }
+        res.json(notaBD); //es 200 por defecto
+    } catch (error) {
+        return res.status(400).json({
+            mensaje: 'Ocurrio un error',
+            error
+        })  
+    }
+
+})
+
+
 //Exportando router
 module.exports = router;
