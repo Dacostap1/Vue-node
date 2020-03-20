@@ -51,6 +51,23 @@ router.get('/notas', async(req, res) => {
     }
 });
 
+//put
+router.put('/nota/:id', async(req, res) => {
+
+    const _id = req.params.id
+    const body = req.body;
+
+    try {
+        const notaBD = await Nota.findByIdAndUpdate(_id, body, {new: true});
+        res.json(notaBD);
+    } catch (error) {
+        return res.status(400).json({
+            mensaje: 'Ocurrio un error',
+            error
+        })
+    }
+})
+
 //detele
 router.delete('/nota/:id', async(req, res) => {
 
