@@ -3,7 +3,11 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/myapp';
+
+//const uri = 'mongodb://localhost:27017/myapp';
+
+//coneccion en la nube
+const uri = 'mongodb+srv://node:uoSPf87J6VALVV9Q@cluster0-idter.mongodb.net/Cluster0?retryWrites=true&w=majority';
 const options = {useNewUrlParser: true, useCreateIndex: true};
 
 const app = express();
