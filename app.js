@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended:true }));
 
 app.use('/api', require('./routes/nota'));
 
+//test varios origenes
 /*app.get('/', function(req, res){
     res.send('holissssss');
 })*/
